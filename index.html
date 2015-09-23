@@ -1,3 +1,21 @@
-<body ng-app="kiwiadmin">
-    <div data-ng-include="'client/templates/index.ng.html'"></div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<md-toolbar md-scroll-shrink layout="row" layout-align="start center" layout-padding>
+    <h2>
+        <span class="md-title">KIWI Admin Portal</span>
+    </h2>
+    <span flex></span>
+
+    <div class="navbar-right navbar-text">
+        <md-button ng-href="/login" ng-hide="$root.currentUser">Login</md-button>
+        <md-button ng-href="/register" ng-hide="$root.currentUser">Sign up</md-button>
+        <div ng-show="$root.currentUser">{{ $root.currentUser }}</div>
+        <md-button ng-href="/logout" ng-show="$root.currentUser">Logout</md-button>
+    </div>
+</md-toolbar>
+<div ui-view flex-gt-sm layout-gt-sm="row"></div>
 </body>
