@@ -6,15 +6,15 @@ angular.module("kiwi-admin").controller("ResetCtrl", ['$meteor', '$state',
         var vm = this;
 
         vm.credentials = {
-            email: ''
+            username: ''
         };
 
         vm.error = '';
 
         vm.reset = function () {
-            $meteor.forgotPassword(vm.credentials.email).then(
+            $meteor.forgotPassword(vm.credentials).then(
                 function () {
-                    $state.go('parties');
+                    $state.go('overview');
                 },
                 function (err) {
                     vm.error = 'Error sending forgot password email - ' + err;

@@ -1,14 +1,7 @@
 /**
- * Created by Daniel on 23.09.2015.
+ * Created by Daniel on 24.09.2015.
  */
-angular.module('kiwi-admin',['angular-meteor','ui.router','ngMaterial']);
-
-angular.module('kiwi-admin').config(['$urlRouterProvider', '$stateProvider', '$locationProvider', function($urlRouterProvider, $stateProvider, $locationProvider){
-    $locationProvider.html5Mode(true);
-
-    Accounts.ui.config({
-        passwordSignupFields: "USERNAME_ONLY"
-    });
+angular.module('kiwi-admin').config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
 
     $stateProvider
         .state('overview', {
@@ -50,13 +43,3 @@ angular.module('kiwi-admin').config(['$urlRouterProvider', '$stateProvider', '$l
 
     $urlRouterProvider.otherwise("/overview");
 }]);
-
-function onReady() {
-    angular.bootstrap(document, ['kiwi-admin']);
-}
-
-if (Meteor.isCordova) {
-    angular.element(document).on("deviceready", onReady);
-} else {
-    angular.element(document).ready(onReady);
-}

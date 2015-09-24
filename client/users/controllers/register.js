@@ -6,7 +6,7 @@ angular.module("kiwi-admin").controller("RegisterCtrl", ['$meteor', '$state',
         var vm = this;
 
         vm.credentials = {
-            email: '',
+            username: '',
             password: ''
         };
 
@@ -15,7 +15,7 @@ angular.module("kiwi-admin").controller("RegisterCtrl", ['$meteor', '$state',
         vm.register = function () {
             $meteor.createUser(vm.credentials).then(
                 function () {
-                    $state.go('parties');
+                    $state.go('overview');
                 },
                 function (err) {
                     vm.error = 'Registration error - ' + err;

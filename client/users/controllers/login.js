@@ -6,16 +6,16 @@ angular.module("kiwi-admin").controller("LoginCtrl", ['$meteor', '$state',
         var vm = this;
 
         vm.credentials = {
-            email: '',
+            username: '',
             password: ''
         };
 
         vm.error = '';
 
         vm.login = function () {
-            $meteor.loginWithPassword(vm.credentials.email, vm.credentials.password).then(
+            $meteor.loginWithPassword(vm.credentials.username, vm.credentials.password).then(
                 function () {
-                    $state.go('parties');
+                    $state.go('overview');
                 },
                 function (err) {
                     vm.error = 'Login error - ' + err;
