@@ -3,10 +3,6 @@
  */
 angular.module('kiwi-admin').config(['$locationProvider', function($locationProvider) {
     $locationProvider.html5Mode(true);
-
-    Accounts.ui.config({
-        passwordSignupFields: "USERNAME_ONLY"
-    });
 }]);
 
 function onReady() {

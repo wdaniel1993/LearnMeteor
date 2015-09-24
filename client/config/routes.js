@@ -22,18 +22,12 @@ angular.module('kiwi-admin').config(['$urlRouterProvider', '$stateProvider', fun
             controller: 'RegisterCtrl',
             controllerAs: 'rc'
         })
-        .state('resetpw', {
-            url: '/resetpw',
-            templateUrl: 'client/users/views/reset-password.ng.html',
-            controller: 'ResetCtrl',
-            controllerAs: 'rpc'
-        })
         .state('logout', {
             url: '/logout',
             resolve: {
                 "logout": ['$meteor', '$state', function($meteor, $state) {
                     return $meteor.logout().then(function(){
-                        $state.go('parties');
+                        $state.go('overviews');
                     }, function(err){
                         console.log('logout error - ', err);
                     });
