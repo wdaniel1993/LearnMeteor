@@ -47,10 +47,10 @@
             <span flex></span>
 
             <div class="navbar-right navbar-text">
-                <md-button class="md-icon-button" ng-href="/login" ng-hide="$root.currentUser">
+                <md-button class="md-icon-button" ui-sref="login" ng-hide="$root.currentUser">
                     <md-icon md-svg-icon="action:ic_account_box_24px"></md-icon>
                 </md-button>
-                <md-button class="md-icon-button" ng-href="/logout" ng-show="$root.currentUser">
+                <md-button class="md-icon-button" ui-sref="logout" ng-show="$root.currentUser">
                     <md-icon md-svg-icon="action:ic_exit_to_app_24px"></md-icon>
                 </md-button>
             </div>
