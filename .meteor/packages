@@ -20,8 +20,9 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 angular:angular-material
 accounts-password
-urigo:angular-blaze-template
 angular
 angular:angular-server
 angularui:angular-ui-router
 planettraining:material-design-icons
+fourseven:scss
+francocatena:compass
