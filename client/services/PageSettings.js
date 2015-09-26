@@ -2,6 +2,8 @@
  * Created by Daniel on 26.09.2015.
  */
 angular.module('kiwi-admin').factory('PageSettings', function() {
+    var scopes = [];
+
     var title = 'KIWI Admin Portal';
     var navigation = [
         {

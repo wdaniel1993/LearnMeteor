@@ -1,0 +1,14 @@
+<md-menu-bar>
+    <md-menu ng-repeat="navi in navigation.navigation track by $index" ng-mouseover="$mdOpenMenu()" ng-mouseleave="navigation.hide()">
+        <button>
+            {{ navi.title }}
+        </button>
+        <md-menu-content>
+            <md-menu-item ng-repeat="sub in navi.subnavi track by $index">
+                <md-button ui-sref="{{sub.state}}">
+                    {{ sub.title }}
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</md-menu-bar>

@@ -10,8 +10,7 @@
         <md-toolbar class="md-accent">
             <h1 class="md-toolbar-tools">Navigation</h1>
             <md-content layout-padding>
-                <div layout="column" ng-include="'client/partials/nav.ng.html'">
-                </div>
+                Todo
             </md-content>
         </md-toolbar>
     </md-sidenav>
@@ -22,10 +21,9 @@
             </md-toolbar-filler>
             <div>
                 <h2 class="md-toolbar-tools">
-                    KIWI Admin Portal
+                    <dw-title></dw-title>
                 </h2>
-                <md-menu-bar ng-include="'client/partials/nav.ng.html'">
-                </md-menu-bar>
+                <dw-navigation></dw-navigation>
             </div>
             <span flex></span>
 
@@ -42,7 +40,7 @@
                 <md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon>
             </md-button>
             <h2>
-                <span>KIWI Admin Portal</span>
+                <dw-title></dw-title>
             </h2>
             <span flex></span>
 
