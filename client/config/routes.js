@@ -27,7 +27,7 @@ angular.module('kiwi-admin').config(['$urlRouterProvider', '$stateProvider', fun
             resolve: {
                 "logout": ['$meteor', '$state', function($meteor, $state) {
                     return $meteor.logout().then(function(){
-                        $state.go('overviews');
+                        $state.go('overview');
                     }, function(err){
                         console.log('logout error - ', err);
                     });

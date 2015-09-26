@@ -6,64 +6,16 @@
 </head>
 <body>
 <div layout="column" layout-fill>
-    <md-toolbar class="md-menu-toolbar">
+    <md-toolbar class="md-menu-toolbar" hide-sm>
         <div layout="row">
-            <md-toolbar-filler layout layout-align="center center">
+            <md-toolbar-filler layout layout-align="space-around center">
                 <img ng-src="/images/logo_small.png" alt="Kiwi Logo" />
             </md-toolbar-filler>
             <div>
                 <h2 class="md-toolbar-tools">
                     KIWI Admin Portal
                 </h2>
-                <md-menu-bar>
-                    <md-menu>
-                        <button ng-click="$mdOpenMenu()">
-                            File
-                        </button>
-                        <md-menu-content>
-                            <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('share', $event)">
-                                    Share...
-                                </md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-                    <md-menu>
-                        <button ng-click="$mdOpenMenu()">
-                            Edit
-                        </button>
-                        <md-menu-content>
-                            <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('share', $event)">
-                                    Share...
-                                </md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-                    <md-menu>
-                        <button ng-click="$mdOpenMenu()">
-                            View
-                        </button>
-                        <md-menu-content>
-                            <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('share', $event)">
-                                    Share...
-                                </md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-                    <md-menu>
-                        <button ng-click="$mdOpenMenu()">
-                            Format
-                        </button>
-                        <md-menu-content>
-                            <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('share', $event)">
-                                    Share...
-                                </md-button>
-                            </md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
+                <md-menu-bar ng-include="'client/partials/nav.ng.html'">
                 </md-menu-bar>
             </div>
             <span flex></span>
