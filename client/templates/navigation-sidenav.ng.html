@@ -1,0 +1,7 @@
+<md-list>
+    <md-subheader ng-repeat-start="navi in navigation.navigation track by $index">{{ navi.title }}</md-subheader>
+    <md-list-item ng-repeat="sub in navi.subnavi track by $index" ng-click="navigation.gotoState(sub.state)">
+        {{ sub.title }}
+    </md-list-item>
+    <md-divider ng-repeat-end></md-divider>
+</md-list>

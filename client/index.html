@@ -7,12 +7,13 @@
 <body>
 <div layout="column" layout-fill>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" hide-sm-gt>
-        <md-toolbar class="md-accent">
-            <h1 class="md-toolbar-tools">Navigation</h1>
-            <md-content layout-padding>
-                Todo
-            </md-content>
+        <md-toolbar class="md-accent md-tall">
+            <span flex></span>
+            <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+                <span class="md-flex">Navigation</span>
+            </h2>
         </md-toolbar>
+        <dw-navigation dw-type="sidenav"></dw-navigation>
     </md-sidenav>
     <md-toolbar class="md-menu-toolbar" hide-sm>
         <div layout="row">
@@ -23,7 +24,7 @@
                 <h2 class="md-toolbar-tools">
                     <dw-title></dw-title>
                 </h2>
-                <dw-navigation></dw-navigation>
+                <dw-navigation dw-type="menubar"></dw-navigation>
             </div>
             <span flex></span>
 
