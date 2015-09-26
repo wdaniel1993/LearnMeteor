@@ -4,7 +4,7 @@
 angular.module("kiwi-admin").directive("menuHelper",['$mdSidenav','$mdUtil',function($mdSidenav, $mdUtil){
     return {
         restrict: 'A',
-        link:  function(scope, element, attrs, tabsCtrl) {
+        link:  function(scope, element, attrs) {
             scope.toggleLeft = buildToggler('left');
             /**
              * Build handler to open/close a SideNav; when animation finishes
