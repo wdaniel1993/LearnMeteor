@@ -27,6 +27,26 @@
             </div>
         </div>
     </md-toolbar>
-    <md-content ui-view></md-content>
+    <md-toolbar hide-gt-sm>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon>
+            </md-button>
+            <h2>
+                <span>KIWI Admin Portal</span>
+            </h2>
+            <span flex></span>
+
+            <div class="navbar-right navbar-text">
+                <md-button class="md-icon-button" ng-href="/login" ng-hide="$root.currentUser">
+                    <md-icon md-svg-icon="action:ic_account_box_24px"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" ng-href="/logout" ng-show="$root.currentUser">
+                    <md-icon md-svg-icon="action:ic_exit_to_app_24px"></md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding ui-view class="content"></md-content>
 </div>
 </body>
