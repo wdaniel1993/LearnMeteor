@@ -8,19 +8,28 @@ angular.module('kiwi-admin').config(['$urlRouterProvider', '$stateProvider', fun
             url: '/overview',
             templateUrl: 'client/children/views/overview.ng.html',
             controller: 'OverviewCtrl',
-            controllerAs: 'ov'
+            controllerAs: 'ov',
+            data: {
+                pageTitle: 'Overview'
+            }
         })
         .state('login', {
             url: '/login',
             templateUrl: 'client/users/views/login.ng.html',
             controller: 'LoginCtrl',
-            controllerAs: 'lc'
+            controllerAs: 'lc',
+            data: {
+                pageTitle: 'Login'
+            }
         })
         .state('register',{
             url: '/register',
             templateUrl: 'client/users/views/register.ng.html',
             controller: 'RegisterCtrl',
-            controllerAs: 'rc'
+            controllerAs: 'rc',
+            data: {
+                pageTitle: 'Register'
+            }
         })
         .state('logout', {
             url: '/logout',
@@ -32,6 +41,9 @@ angular.module('kiwi-admin').config(['$urlRouterProvider', '$stateProvider', fun
                         console.log('logout error - ', err);
                     });
                 }]
+            },
+            data: {
+                pageTitle: 'Logout'
             }
         });
 
