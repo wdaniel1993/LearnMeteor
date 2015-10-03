@@ -11,6 +11,10 @@ angular.module("kiwi-admin-server").service('OrganisationManager',['Organisation
         }
     };
 
+    this.removeOrganisation = function (organisation) {
+        Organisations.collection.remove({_id: organisation._id});
+    };
+
     Meteor.publish('organisations', function () {
         return Organisations.collection.find({});
     });

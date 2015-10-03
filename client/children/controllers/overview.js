@@ -10,13 +10,17 @@ angular.module("kiwi-admin").controller("OverviewCtrl", ['$meteor','$meteorColle
                 title : vm.newOrganisation
             };
 
-            OrganisationManager.addOrganisation(organisation).then(function(){
-                vm.newOrganisation = '';
-            }, function(error) {
+            OrganisationManager.addOrganisation(organisation).then(angular.noop, function(error) {
                 vm.error = error;
             });
 
             vm.newOrganisation = '';
+        };
+
+        vm.removeOrganisation = function (organisation) {
+                OrganisationManager.removeOrganisation(organisation).then(angular.noop, function(error) {
+                    vm.error = error;
+                });
         };
     }
 ]);

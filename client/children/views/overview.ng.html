@@ -1,18 +1,20 @@
-<div flex ng-show="$root.currentUser">
-    Hallo {{ $root.currentUser.username }}
-</div>
-<div flex ng-hide="$root.currentUser">
-    Please log in!
-</div>
-
 <div flex>
-    <ul ng-repeat="organisation in ov.organisations" >
-        <li>{{organisation.title}}</li>
-    </ul>
-    <form id="org-form" ng-submit="ov.addOrganisation()">
+    <div ng-show="$root.currentUser">
+        Hallo {{ $root.currentUser.username }}
+    </div>
+    <div ng-hide="$root.currentUser">
+        Please log in!
+    </div>
+
+    <div>
+        <ul ng-repeat="organisation in ov.organisations" >
+            <li>{{organisation.title}} - <md-button ng-click="ov.removeOrganisation(organisation)">Remove</md-button></li>
+        </ul>
+        <form id="org-form" ng-submit="ov.addOrganisation()">
             <md-input-container>
-            <label>Organistion</label>
-            <input type="text" ng-model="ov.newOrganisation" required md-maxlength="10">
-        </md-input-container>
-    </form>
+                <label>Organistion</label>
+                <input type="text" ng-model="ov.newOrganisation" required md-maxlength="10">
+            </md-input-container>
+        </form>
+    </div>
 </div>
