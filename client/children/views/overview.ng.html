@@ -4,3 +4,15 @@
 <div flex ng-hide="$root.currentUser">
     Please log in!
 </div>
+
+<div flex>
+    <ul ng-repeat="organisation in ov.organisations" >
+        <li>{{organisation.title}}</li>
+    </ul>
+    <form id="org-form" ng-submit="ov.addOrganisation()">
+            <md-input-container>
+            <label>Organistion</label>
+            <input type="text" ng-model="ov.newOrganisation" required md-maxlength="10">
+        </md-input-container>
+    </form>
+</div>
