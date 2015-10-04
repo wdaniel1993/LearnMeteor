@@ -1,10 +1,10 @@
 /**
  * Created by Daniel on 23.09.2015.
  */
-angular.module("kiwi-admin").controller("OverviewCtrl", ['$meteor','$meteorCollection', '$state','Organisations','OrganisationManager',
-    function($meteor,$meteorCollection,$state, Organisations,OrganisationManager){
+angular.module("kiwi-admin").controller("OverviewCtrl", ['$meteor', '$state','Organisations','OrganisationManager',
+    function($meteor,$state, Organisations,OrganisationManager){
         var vm = this;
-        vm.organisations = $meteorCollection(Organisations.collection).subscribe('organisations');
+        vm.organisations = $meteor.collection(Organisations.collection).subscribe('organisations');
         vm.addOrganisation = function () {
             var organisation = {
                 title : vm.newOrganisation
@@ -18,9 +18,9 @@ angular.module("kiwi-admin").controller("OverviewCtrl", ['$meteor','$meteorColle
         };
 
         vm.removeOrganisation = function (organisation) {
-                OrganisationManager.removeOrganisation(organisation).then(angular.noop, function(error) {
-                    vm.error = error;
-                });
+            OrganisationManager.removeOrganisation(organisation).then(angular.noop, function(error) {
+                vm.error = error;
+            });
         };
     }
 ]);

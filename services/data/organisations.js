@@ -15,9 +15,15 @@ angular.module("kiwi-admin-server").service('OrganisationManager',['Organisation
         Organisations.collection.remove({_id: organisation._id});
     };
 
-    Meteor.publish('organisations', function () {
-        return Organisations.collection.find({});
-    });
-}]).config(['ServerAPIProvider',function(ServerAPIProvider) {
-    ServerAPIProvider.register('OrganisationManager');
+    if(Meteor.isServer) {
+        Meteor.publish('organisations', function () {
+            return Organisations.collection.find({});
+        });
+    }
 }]);
+
+if(Meteor.isServer){
+    angular.module("kiwi-admin-server").config(['ServerAPIProvider',function(ServerAPIProvider) {
+        ServerAPIProvider.register('OrganisationManager');
+    }]);
+}
